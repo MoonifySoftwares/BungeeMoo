@@ -1,0 +1,40 @@
+From 42086afe5cb8e7ec279421c3caf74fdf0ebbc413 Mon Sep 17 00:00:00 2001
+From: Mark Vainomaa <mikroskeem@mikroskeem.eu>
+Date: Wed, 18 Jul 2018 20:23:03 +0300
+Subject: [PATCH] Copy license files into jar
+
+
+diff --git a/proxy/pom.xml b/proxy/pom.xml
+index d1c4570d..fe1506e4 100644
+--- a/proxy/pom.xml
++++ b/proxy/pom.xml
+@@ -119,4 +119,26 @@
+             <scope>runtime</scope>
+         </dependency>
+     </dependencies>
++
++    <!-- Waterfall start - copy license files into jar -->
++    <build>
++        <resources>
++            <resource>
++                <directory>src/main/resources</directory>
++            </resource>
++            <resource>
++                <directory>../</directory>
++                <includes>
++                    <include>LICENSE</include>
++                </includes>
++            </resource>
++            <resource>
++                <directory>../../</directory>
++                <includes>
++                    <include>LICENSE.txt</include>
++                </includes>
++            </resource>
++        </resources>
++    </build>
++    <!-- Waterfall end -->
+ </project>
+-- 
+2.43.0
+
